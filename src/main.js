@@ -4,6 +4,7 @@ const root = document.documentElement;
 const themeButton = document.querySelector(".theme");
 const projectGrid = document.querySelector(".project-grid");
 const projectOrder = [
+  "project-eight-dialog",
   "project-one-dialog",
   "project-four-dialog",
   "project-three-dialog",
@@ -26,6 +27,9 @@ const normalizeTag = (tag) => tag.trim().toLowerCase();
 
 const tagTones = {
   "applied ai": "applied-ai",
+  "compound ai": "applied-ai",
+  "llm evaluation": "machine-learning",
+  "python": "automation",
   "optimization": "optimization",
   "genetic algorithms": "optimization",
   "computer vision": "vision",

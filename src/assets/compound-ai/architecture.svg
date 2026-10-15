@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 750" role="img" aria-labelledby="title desc">
+<title id="title">Board game recommender: single-call baseline versus compound system</title>
+<desc id="desc">Purple blocks are LLM calls; teal blocks are Python processing. Each of five candidates is checked in turn. Skip incompatible candidates, stop at the first valid game, or decline when all are rejected.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#62717e" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#23313c;font-size:18px} .lane{font-size:24px;font-weight:700}.small{font-size:16px}.label{font-size:16px;font-weight:700}.edge{fill:none;stroke:#62717e;stroke-width:2;marker-end:url(#arrow)}.box{stroke:#bac5ce;stroke-width:1.5;fill:#fff}.llm{fill:#eee7fa;stroke:#9d82c2}.py{fill:#e0f2ed;stroke:#6aa694}</style>
+<rect width="1600" height="750" rx="12" fill="#f8fafb"/>
+<text x="32" y="42" class="lane">Single-call baseline</text>
+<rect x="1200" y="22" width="16" height="16" rx="3" class="llm"/><text x="1225" y="36" class="small">LLM call</text>
+<rect x="1360" y="22" width="16" height="16" rx="3" class="py"/><text x="1385" y="36" class="small">Python processing</text>
+<rect x="120" y="78" width="300" height="100" rx="8" class="box "/>
+<text x="270.0" y="123.0" text-anchor="middle" class=""><tspan x="270.0" dy="0">User request +</tspan><tspan x="270.0" dy="23">five candidate games</tspan></text>
+<rect x="530" y="78" width="570" height="100" rx="8" class="box llm"/>
+<text x="815.0" y="112.0" text-anchor="middle" class=""><tspan x="815.0" dy="0">One LLM call</tspan><tspan x="815.0" dy="23">Interpret requirements, evaluate all candidates</tspan><tspan x="815.0" dy="23">and select</tspan></text>
+<rect x="1210" y="78" width="270" height="100" rx="8" class="box "/>
+<text x="1345.0" y="123.0" text-anchor="middle" class=""><tspan x="1345.0" dy="0">Recommend a game</tspan><tspan x="1345.0" dy="23">or decline</tspan></text>
+<path d="M420 128H530" class="edge"/>
+<path d="M1100 128H1210" class="edge"/>
+<path d="M32 220H1568" stroke="#d8e0e5"/><text x="32" y="265" class="lane">Compound system</text>
+<text x="480" y="305" text-anchor="middle" class="small"><tspan x="480" dy="0">Five candidate games: check one at a time</tspan></text>
+<rect x="25" y="355" width="130" height="110" rx="8" class="box "/>
+<text x="90.0" y="405.0" text-anchor="middle" class=""><tspan x="90.0" dy="0">User</tspan><tspan x="90.0" dy="23">request</tspan></text>
+<rect x="180" y="355" width="170" height="110" rx="8" class="box llm"/>
+<text x="265.0" y="394.0" text-anchor="middle" class=""><tspan x="265.0" dy="0">LLM: extract</tspan><tspan x="265.0" dy="23">structured</tspan><tspan x="265.0" dy="23">requirements</tspan></text>
+<rect x="375" y="345" width="200" height="130" rx="8" class="box py"/>
+<text x="475.0" y="383.0" text-anchor="middle" class=""><tspan x="475.0" dy="0">Python: check</tspan><tspan x="475.0" dy="23">candidate metadata</tspan><tspan x="475.0" dy="23">Player count,</tspan><tspan x="475.0" dy="23">duration, age</tspan></text>
+<path d="M670 344L736 410L670 476L604 410Z" class="box"/>
+<text x="670" y="405" text-anchor="middle" class="small"><tspan x="670" dy="0">Candidate</tspan><tspan x="670" dy="23">ruled out?</tspan></text>
+<rect x="765" y="345" width="210" height="130" rx="8" class="box llm"/>
+<text x="870.0" y="383.0" text-anchor="middle" class=""><tspan x="870.0" dy="0">LLM: extract</tspan><tspan x="870.0" dy="23">needed description</tspan><tspan x="870.0" dy="23">facts + supporting</tspan><tspan x="870.0" dy="23">quotes</tspan></text>
+<rect x="1000" y="345" width="200" height="130" rx="8" class="box py"/>
+<text x="1100.0" y="383.0" text-anchor="middle" class=""><tspan x="1100.0" dy="0">Python: verify</tspan><tspan x="1100.0" dy="23">quotes + apply</tspan><tspan x="1100.0" dy="23">all acceptance</tspan><tspan x="1100.0" dy="23">rules</tspan></text>
+<path d="M1295 344L1361 410L1295 476L1229 410Z" class="box"/>
+<text x="1295" y="405" text-anchor="middle" class="small"><tspan x="1295" dy="0">Meets every</tspan><tspan x="1295" dy="23">requirement?</tspan></text>
+<rect x="1410" y="355" width="165" height="110" rx="8" class="box "/>
+<text x="1492.5" y="405.0" text-anchor="middle" class=""><tspan x="1492.5" dy="0">Recommend</tspan><tspan x="1492.5" dy="23">game + stop</tspan></text>
+<path d="M155 410H180" class="edge"/>
+<path d="M350 410H375" class="edge"/>
+<path d="M575 410H604" class="edge"/>
+<path d="M736 410H765" class="edge"/>
+<path d="M975 410H1000" class="edge"/>
+<path d="M1200 410H1229" class="edge"/>
+<path d="M1361 410H1410" class="edge"/>
+<text x="749" y="396" text-anchor="middle" class="label"><tspan x="749" dy="0">No</tspan></text>
+<text x="1382" y="396" text-anchor="middle" class="label"><tspan x="1382" dy="0">Yes</tspan></text>
+<!-- Rejection branches merge before checking whether any candidates remain. -->
+<path d="M670 476V520H950" fill="none" stroke="#62717e" stroke-width="2"/>
+<text x="710" y="502" class="label">Yes: skip</text>
+<path d="M1295 476V520H950" fill="none" stroke="#62717e" stroke-width="2"/>
+<text x="1310" y="502" class="label">No</text>
+<circle cx="950" cy="520" r="3" fill="#62717e"/>
+<path d="M950 520V540" class="edge"/>
+<path d="M950 540L1060 615L950 690L840 615Z" class="box"/>
+<text x="950" y="594" text-anchor="middle" class="small"><tspan x="950">All five</tspan><tspan x="950" dy="23">candidates</tspan><tspan x="950" dy="23">rejected?</tspan></text>
+<path d="M840 615H475V475" class="edge"/>
+<text x="610" y="598" text-anchor="middle" class="label">No: next candidate</text>
+<path d="M1060 615H1250" class="edge"/>
+<text x="1155" y="598" text-anchor="middle" class="label">Yes</text>
+<rect x="1250" y="580" width="250" height="70" rx="8" class="box"/>
+<text x="1375" y="621" text-anchor="middle">Decline</text>
+<text x="350" y="720" text-anchor="middle" class="label">Python checks run before further model calls.</text>
+<text x="1330" y="310" text-anchor="middle" class="label">Stop at the first valid recommendation.</text>
+</svg>

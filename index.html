@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Laura Tagle Portfolio">
-  <meta property="og:title" content="Laura Tagle Portfolio">
-  <meta property="og:description" content="Laura Tagle Portfolio">
-  <meta name="twitter:title" content="Laura Tagle Portfolio">
-  <meta name="twitter:description" content="Laura Tagle Portfolio">
-  <title>Laura Tagle Portfolio</title>
+  <meta name="description" content="Jimena Tagle Portfolio">
+  <meta property="og:title" content="Jimena Tagle Portfolio">
+  <meta property="og:description" content="Jimena Tagle Portfolio">
+  <meta name="twitter:title" content="Jimena Tagle Portfolio">
+  <meta name="twitter:description" content="Jimena Tagle Portfolio">
+  <title>Jimena Tagle Portfolio</title>
   <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body>
@@ -31,10 +31,11 @@
     <section class="hero shell" id="about" aria-labelledby="intro-title">
       <div>
         <p class="eyebrow">Lugano, Switzerland</p>
-        <p class="hero-greeting">Hi, I'm Laura.</p>
+        <p class="hero-greeting">Hi, I'm Jimena.</p>
         <h1 id="intro-title">I connect human problems with <span>machine intelligence.</span></h1>
         <p class="hero-support">From identifying real-world problems where AI can create value to choosing the right machine-learning approach, I build systems designed for measurable impact.</p>
       </div>
+      <img class="hero-portrait" src="/profile.jpeg" alt="Portrait of Jimena Tagle Muñoz" width="500" height="500" fetchpriority="high">
       <ul class="facts" aria-label="Profile details">
         <li><span class="fact-label">Current model</span><span class="fact-value">MSc Artificial Intelligence · USI Lugano</span></li>
         <li><span class="fact-label">Training data</span><span class="fact-value">Professional experience delivering measurable productivity gains with data</span></li>
@@ -60,6 +61,19 @@
       </div>
 
       <div class="project-grid" aria-live="polite">
+        <article class="card compound-card" data-likes="0">
+          <button class="card-open" type="button" data-dialog="project-eight-dialog" aria-label="Open details for Improving a Board Game Recommender System with Compound AI"></button>
+          <div class="card-overview"><div class="card-copy">
+            <span class="project-type">AI Systems Engineering</span>
+            <h3>Improving a Board Game Recommender System with Compound AI</h3>
+            <p class="summary">Improved recommendation accuracy from 68% to 92% by combining a low-cost language model with Python checks, structured outputs and targeted error analysis.</p>
+            <div class="meta"><div class="tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+              <button class="like" type="button" aria-label="Like this project" aria-pressed="false"><span class="heart" aria-hidden="true">♡</span><span class="count">0</span></button>
+            </div>
+          </div></div>
+        </article>
+
+
         <article class="card" data-likes="0">
           <button class="card-open" type="button" data-dialog="project-one-dialog" aria-label="Open details for Evolutionary computation for optimizing distribution systems"></button>
           <div class="card-overview">
@@ -193,8 +207,33 @@
           </div>
         </article>
       </div>
-      <p class="sr-only" id="project-count" aria-live="polite">7 projects shown</p>
+      <p class="sr-only" id="project-count" aria-live="polite">8 projects shown</p>
     </section>
+
+    <dialog class="project-dialog compound-dialog" id="project-eight-dialog" aria-labelledby="project-eight-title">
+      <div class="dialog-inner">
+        <div class="dialog-top"><div>
+          <span class="project-type">AI Systems Engineering</span>
+          <h3 id="project-eight-title">Improving a Board Game Recommender System with Compound AI</h3>
+          <p class="dialog-summary">Improved recommendation accuracy from 68% to 92% by combining a low-cost language model with Python checks, structured outputs and targeted error analysis.</p>
+          <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+        </div><button class="dialog-close" type="button" aria-label="Close project details">×</button></div>
+        <figure class="compound-visual">
+          <div class="architecture-scroll" tabindex="0" role="region" aria-label="System architecture comparison; scroll horizontally on smaller screens">
+            <img src="/src/assets/compound-ai/architecture.svg" alt="Two-lane architecture comparison. The baseline uses one LLM call. The compound system extracts requirements, checks metadata in Python, skips ruled-out candidates, extracts descriptive facts with an LLM, and verifies quotes and acceptance rules in Python. It stops at the first valid recommendation or declines after all five candidates are rejected.">
+          </div>
+        </figure>
+        <div class="detail-grid compound-details"><div class="detail-block"><h4>Goal</h4><p>Select a board game that satisfies a natural-language request, or decline when none of the five candidates meets every requirement.</p></div><div class="detail-block"><h4>Challenges</h4><ul><li>Distinguishing strict requirements from preferences in natural language.</li><li>Handling ambiguous descriptions and labels that humans can interpret differently.</li><li>Improving accuracy while keeping model cost and latency low.</li></ul></div><div class="detail-block"><h4>Approach</h4><ul><li>Built a compound system that separates language interpretation, constraint checking and final selection.</li><li>Converted natural-language requests into structured, validated requirements.</li><li>Used Python to check explicit constraints such as player count, duration and age.</li><li>Rejected incompatible candidates before making further model calls, and stopped once a valid recommendation was found.</li><li>Used the model to interpret descriptive evidence, with supporting quotes verified in Python.</li><li>Grouped failures by cause and evaluated individual steps to identify where errors originated and target improvements.</li></ul></div></div>
+        <section class="compound-results" aria-labelledby="compound-results-title">
+          <h4 id="compound-results-title">Results</h4>
+          <div class="comparison-scroll"><table class="comparison-table">
+            <thead><tr><th scope="col">Metric</th><th scope="col">Single-call baseline</th><th scope="col">Final compound system</th></tr></thead>
+            <tbody><tr><th scope="row">Accuracy</th><td>68%</td><td><strong>92%</strong></td></tr>
+            <tr><th scope="row">Model cost per request</th><td>~$0.0004</td><td>~$0.00051</td></tr></tbody>
+          </table></div>
+        </section>
+      </div>
+    </dialog>
 
     <dialog class="project-dialog" id="project-one-dialog" aria-labelledby="project-one-title">
       <div class="dialog-inner">
@@ -410,7 +449,7 @@
     </section>
   </main>
 
-  <footer><div class="footer-inner shell">Made with ☕️ by Laura Tagle</div></footer>
+  <footer><div class="footer-inner shell">Made with ☕️ by Jimena Tagle</div></footer>
 
   <script type="module" src="/src/main.js"></script>
 </body>

@@ -179,11 +179,28 @@ nav {
 .hero {
   min-height: 410px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 80px;
-  align-items: end;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 44px 80px;
+  align-items: center;
   padding: 76px 0 62px;
   border-bottom: 1px solid var(--line);
+}
+
+.hero-portrait {
+  display: block;
+  width: 220px;
+  height: 220px;
+  justify-self: center;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero .facts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .eyebrow {
@@ -490,12 +507,18 @@ html[data-theme="dark"] .filter-swatch[data-tone="business-impact"] { background
   color: var(--muted);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px;
-  font: 12px/1 var(--mono);
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 64px;
+  min-height: 48px;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 24px;
+  font: 14px/1 var(--mono);
   cursor: pointer;
+  touch-action: manipulation;
 }
-.like .heart { color: var(--coral); font-size: 17px; transition: transform .2s ease, color .2s ease; }
+.like .heart { color: var(--coral); font-size: 28px; transition: transform .2s ease, color .2s ease; }
 .like:hover .heart, .like.liked .heart { color: var(--coral); transform: scale(1.12); }
 
 .detail-grid {
@@ -569,6 +592,22 @@ html[data-theme="dark"] .filter-swatch[data-tone="business-impact"] { background
 }
 .dialog-close:hover { color: var(--coral); border-color: var(--coral); }
 .dialog-tags { margin-top: 18px; }
+.compound-dialog { width: min(1440px, calc(100% - 32px)); }
+.compound-dialog .dialog-top > div { flex: 1; min-width: 0; }
+.compound-dialog .dialog-top h3,
+.compound-dialog .dialog-summary { max-width: none; }
+.compound-dialog .dialog-close { flex-shrink: 0; }
+.compound-visual { margin: 30px 0 0; }
+.architecture-scroll, .comparison-scroll { overflow-x: auto; }
+.architecture-scroll img { display: block; width: 100%; min-width: 1120px; height: auto; }
+.architecture-scroll:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 3px; }
+.compound-results { margin-top: 30px; }
+.compound-results h4 { color: var(--coral); font: 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.comparison-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; text-align: left; }
+.comparison-table th, .comparison-table td { padding: 16px; border-bottom: 1px solid var(--line); }
+.comparison-table thead { background: var(--blue-whisper); }
+.comparison-table th { font-weight: 500; }
+.comparison-table td:last-child { color: var(--blue-ink); }
 .model-comparison {
   padding: 30px 0;
   border-bottom: 1px solid var(--line);
@@ -830,6 +869,8 @@ footer { border-top: 1px solid var(--line); }
   nav { grid-template-columns: 1fr auto; }
   .navlinks, .availability { display: none; }
   .hero { grid-template-columns: 1fr; gap: 46px; padding-top: 56px; }
+  .hero-portrait { justify-self: start; }
+  .hero .facts { grid-template-columns: 1fr; gap: 0; }
   .workhead { grid-template-columns: 1fr; align-items: start; }
   .filters { justify-self: start; }
   .filter-menu { right: auto; left: 0; }

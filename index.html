@@ -61,6 +61,22 @@
       </div>
 
       <div class="project-grid" aria-live="polite">
+        <article class="card neural-wave-card" data-likes="0">
+          <button class="card-open" type="button" data-dialog="project-nine-dialog" aria-label="Open details for Reconstructing electricity prices with explainable ML"></button>
+          <div class="card-overview">
+            <div class="card-copy">
+              <span class="project-type">Explainable machine learning</span>
+              <h3>Reconstructing electricity prices with explainable ML</h3>
+              <span class="project-award"><span aria-hidden="true">🏆</span> Neural Wave 2026 · Overall &amp; AET category winner</span>
+              <p class="summary">Reconstructed quarter-hour electricity prices from hourly data using interpolation and interpretable ML corrections, reducing mean absolute error by 54.1% against a flat hourly baseline.</p>
+              <div class="meta">
+                <div class="tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Business Impact</span><span class="tag">Machine Learning</span><span class="tag">Time Series</span><span class="tag">Energy Markets</span><span class="tag">Explainable AI</span></div>
+                <button class="like" type="button" aria-label="Like this project" aria-pressed="false"><span class="heart" aria-hidden="true">♡</span><span class="count">0</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <article class="card compound-card" data-likes="0">
           <button class="card-open" type="button" data-dialog="project-eight-dialog" aria-label="Open details for Improving a Board Game Recommender System with Compound AI"></button>
           <div class="card-overview"><div class="card-copy">
@@ -207,8 +223,46 @@
           </div>
         </article>
       </div>
-      <p class="sr-only" id="project-count" aria-live="polite">8 projects shown</p>
+      <p class="sr-only" id="project-count" aria-live="polite">9 projects shown</p>
     </section>
+
+    <dialog class="project-dialog neural-wave-dialog" id="project-nine-dialog" aria-labelledby="project-nine-title">
+      <div class="dialog-inner">
+        <div class="dialog-top">
+          <div>
+            <span class="project-type">Explainable machine learning</span>
+            <h3 id="project-nine-title">Reconstructing electricity prices with explainable ML</h3>
+            <span class="project-award"><span aria-hidden="true">🏆</span> Neural Wave 2026 · Overall &amp; AET category winner</span>
+            <p class="dialog-summary">Reconstructed quarter-hour electricity prices from hourly data using interpolation and interpretable ML corrections, reducing mean absolute error by 54.1% against a flat hourly baseline.</p>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Business Impact</span><span class="tag">Machine Learning</span><span class="tag">Time Series</span><span class="tag">Energy Markets</span><span class="tag">Explainable AI</span></div>
+          </div>
+          <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+        </div>
+        <div class="neural-wave-dialog-body">
+          <div class="detail-grid">
+            <div class="detail-block"><h4>Goal</h4><p>Reconstruct 96 quarter-hour electricity prices from 24 hourly prices across four European market zones.</p></div>
+            <div class="detail-block"><h4>Challenges</h4><ul><li>Preserving hourly averages while learning useful price corrections.</li><li>Working with limited available features.</li><li>Managing a high risk of overfitting with limited predictive information.</li></ul></div>
+            <div class="detail-block"><h4>Approach</h4><ul><li>Combined a smooth PCHIP interpolation baseline with three LightGBM models for intra-hour slope, curvature and alternating price movements.</li><li>Constrained learned corrections to sum to zero within each hour, preserving the baseline’s hourly mean.</li><li>Engineered features from hourly price curves, differences between market zones, calendar information and historical prices.</li><li>Built a Streamlit dashboard to explore reconstructed curves, model contributions and hours at higher risk of reconstruction error.</li></ul></div>
+            <div class="detail-block"><h4>Results</h4><ul><li><strong>Overall 1st Prize and AET Project Category Winner</strong>, Neural Wave Hackathon 2026, Lugano.</li><li><strong>54.1% lower mean absolute error</strong> than the flat hourly baseline on September evaluation dates.</li><li>Flagged high-risk hours with <strong>2.8–3.9× higher reconstruction error</strong> than low-risk hours in development evaluation.</li></ul></div>
+            <div class="detail-block"><h4>Source</h4><p>Explore the project code on <a class="project-source" href="https://github.com/neural-wave/ch-W1" target="_blank" rel="noreferrer">GitHub ↗</a></p></div>
+          </div>
+          <div class="image-carousel neural-wave-photos" data-carousel role="region" aria-label="Neural Wave Hackathon 2026 photos">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Show previous Neural Wave photo">‹</button>
+            <figure class="carousel-slide is-active">
+              <img src="/src/assets/neural-wave/team.jpg" width="1200" height="1600" loading="lazy" alt="The four-person team at Neural Wave Hackathon 2026 in front of the event sponsor screen">
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/src/assets/neural-wave/award.jpg" width="1200" height="1600" loading="lazy" alt="First-prize announcement for team Applepi with an award of 3,000 CHF">
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/src/assets/neural-wave/hackathon.jpg" width="1600" height="1200" loading="lazy" alt="The team working together at a table during Neural Wave Hackathon 2026">
+            </figure>
+            <button class="carousel-arrow carousel-next" type="button" aria-label="Show next Neural Wave photo">›</button>
+            <span class="carousel-count" aria-live="polite">1 / 3</span>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <dialog class="project-dialog compound-dialog" id="project-eight-dialog" aria-labelledby="project-eight-title">
       <div class="dialog-inner">

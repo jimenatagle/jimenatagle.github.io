@@ -905,3 +905,37 @@ footer { border-top: 1px solid var(--line); }
     transition-duration: .01ms !important;
   }
 }
+
+/* Neural Wave project: reuse the portfolio's tags, detail blocks and carousel. */
+.project-award {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 7px;
+  max-width: 100%;
+  margin: 0 0 15px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--blue-whisper);
+  font: 11px/1.5 var(--mono);
+}
+.neural-wave-dialog-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr);
+  gap: 34px;
+  align-items: start;
+  padding-top: 30px;
+}
+.neural-wave-dialog-body .detail-grid { padding-top: 0; }
+.neural-wave-photos .carousel-slide img {
+  height: 520px;
+  max-height: none;
+}
+.neural-wave-photos .carousel-arrow { top: calc(50% - 17px); }
+@media (max-width: 900px) {
+  .neural-wave-dialog-body { grid-template-columns: 1fr; }
+  .neural-wave-photos { width: min(100%, 520px); margin-inline: auto; }
+  .neural-wave-photos .carousel-slide img { height: clamp(280px, 100vw, 520px); }
+}

@@ -4,6 +4,7 @@ const root = document.documentElement;
 const themeButton = document.querySelector(".theme");
 const projectGrid = document.querySelector(".project-grid");
 const projectOrder = [
+  "project-nine-dialog",
   "project-eight-dialog",
   "project-one-dialog",
   "project-four-dialog",
@@ -42,6 +43,8 @@ const tagTones = {
   "neo4j": "graph",
   "anomaly detection": "anomaly",
   "time series": "time-series",
+  "energy markets": "business-analytics",
+  "explainable ai": "applied-ai",
   "automation": "automation",
   "process improvement": "automation",
   "business impact": "business-impact",

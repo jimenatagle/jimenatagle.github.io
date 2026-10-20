@@ -958,7 +958,7 @@ footer { border-top: 1px solid var(--line); }
   font-size: 15px;
   line-height: 1.7;
 }
-.illustration-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.illustration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .illustration-card { min-width: 0; }
 .illustration-preview {
   position: relative;
@@ -1022,7 +1022,7 @@ footer { border-top: 1px solid var(--line); }
   .navlinks { display: flex; gap: clamp(10px, 3vw, 24px); }
   .navlinks a { font-size: 10px; letter-spacing: .03em; }
   .illustrations-head { grid-template-columns: 1fr; gap: 20px; }
-  .illustration-grid { gap: 28px; }
+  .illustration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
   .illustration-preview { padding: 18px; }
 }
 @media (max-width: 640px) {

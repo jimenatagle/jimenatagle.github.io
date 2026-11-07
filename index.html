@@ -56,7 +56,7 @@
               <button type="button" data-filter-action="all">Select all</button>
               <button type="button" data-filter-action="clear">Clear all</button>
             </div>
-            <div class="filter-options" role="group" aria-label="Filter projects by tag"></div>
+            <div class="filter-options" role="group" aria-label="Filter projects by tags"></div>
           </div>
         </div>
       </div>
@@ -71,7 +71,39 @@
               <span class="project-award"><span aria-hidden="true">🏆</span> Neural Wave 2026 · Overall &amp; AET category winner</span>
               <p class="summary">Reconstructed quarter-hour electricity prices from hourly data using interpolation and interpretable ML corrections, reducing mean absolute error by 54.1% against a flat hourly baseline.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Business Impact</span><span class="tag">Machine Learning</span><span class="tag">Time Series</span><span class="tag">Energy Markets</span><span class="tag">Explainable AI</span></div>
+                <div class="tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Explainable AI</span><span class="tag">Energy Markets</span><span class="tag">Business Impact</span></div>
+                <button class="like" type="button" aria-label="Like this project" aria-pressed="false"><span class="heart" aria-hidden="true">♡</span><span class="count">0</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-likes="0">
+          <button class="card-open" type="button" data-dialog="project-one-dialog" aria-label="Open details for Evolutionary computation for optimizing distribution systems"></button>
+          <div class="card-overview">
+            <div class="card-copy">
+              <span class="project-type">Optimization</span>
+              <h3>Evolutionary computation for optimizing distribution systems</h3>
+              <p class="summary">A genetic algorithm that optimizes distribution layouts to reduce delivery costs under real-world constraints.</p>
+              <div class="meta">
+                <div class="tags" aria-label="Tags"><span class="tag">Optimization</span><span class="tag">Genetic Algorithms</span><span class="tag">Business Impact</span></div>
+                <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
+                  <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card retail-forecasting-card" data-likes="0">
+          <button class="card-open" type="button" data-dialog="project-retail-dialog" aria-label="Open details for Retail cold-start forecasting with a two-week update"></button>
+          <div class="card-overview">
+            <div class="card-copy">
+              <span class="project-type">Retail forecasting</span>
+              <h3>Retail cold-start forecasting with a two-week update</h3>
+              <p class="summary">How much will a new garment sell over its 12-week lifecycle? How can two weeks of sales improve forecasts and stock allocation?</p>
+              <div class="meta">
+                <div class="tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Forecasting</span><span class="tag">Image Embeddings</span><span class="tag">Retail</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false"><span class="heart" aria-hidden="true">♡</span><span class="count">0</span></button>
               </div>
             </div>
@@ -84,30 +116,10 @@
             <span class="project-type">AI Systems Engineering</span>
             <h3>Improving a Board Game Recommender System with Compound AI</h3>
             <p class="summary">Improved recommendation accuracy from 68% to 92% by combining a low-cost language model with Python checks, structured outputs and targeted error analysis.</p>
-            <div class="meta"><div class="tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+            <div class="meta"><div class="tags" aria-label="Tags"><span class="tag">NLP</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span></div>
               <button class="like" type="button" aria-label="Like this project" aria-pressed="false"><span class="heart" aria-hidden="true">♡</span><span class="count">0</span></button>
             </div>
           </div></div>
-        </article>
-
-
-        <article class="card" data-likes="0">
-          <button class="card-open" type="button" data-dialog="project-one-dialog" aria-label="Open details for Evolutionary computation for optimizing distribution systems"></button>
-          <div class="card-overview">
-            <div class="card-copy">
-              <span class="project-type">Optimization</span>
-              <h3>Evolutionary computation for optimizing distribution systems</h3>
-              <p class="summary">A genetic algorithm that optimizes distribution layouts to reduce delivery costs under real-world constraints.</p>
-              <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Applied AI</span><span class="tag">Optimization</span><span class="tag">Genetic Algorithms</span><span class="tag">Business Impact</span>
-                </div>
-                <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
-                  <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
-                </button>
-              </div>
-            </div>
-          </div>
         </article>
 
         <article class="card secondary" data-likes="0">
@@ -118,9 +130,7 @@
               <h3>NoSQL Graph analytics for e-commerce behavior</h3>
               <p class="summary">Mapping customer-product relationships to reveal purchasing patterns that tables tend to hide.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Graph Analytics</span><span class="tag">Neo4j</span><span class="tag">Business Analytics</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">Graph Analytics</span><span class="tag">Neo4j</span><span class="tag">E-commerce</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -137,9 +147,7 @@
               <h3>Temporal &amp; network analytics for fraud detection</h3>
               <p class="summary">Detecting suspicious financial accounts by combining time-series behavior with transaction-network dependencies.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Machine Learning</span><span class="tag">Graph Analytics</span><span class="tag">Anomaly Detection</span><span class="tag">Time Series</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Graph Analytics</span><span class="tag">Anomaly Detection</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -156,9 +164,7 @@
               <h3>3D Reconstruction with Structure from Motion</h3>
               <p class="summary">A technical deep dive into SfM Revisited, connecting geometry-based reconstruction theory to a practical 3D reconstruction of Statua La Desolazione in Parco Ciani.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Computer Vision</span><span class="tag">3D Reconstruction</span><span class="tag">Image Processing</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">Computer Vision</span><span class="tag">3D Reconstruction</span><span class="tag">Image Processing</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -175,9 +181,7 @@
               <h3>Predicting &amp; explaining textile rejects</h3>
               <p class="summary">Most production records have no rejected fabric, but occasional failures can cause significant losses. This project identifies high-risk production conditions and explains the factors associated with reject occurrence and severity.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Machine Learning</span><span class="tag">Statistical Modeling</span><span class="tag">Quality Analytics</span><span class="tag">Business Impact</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">Explainable AI</span><span class="tag">Statistical Modeling</span><span class="tag">Quality Analytics</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -194,9 +198,7 @@
               <h3>Automated customer document delivery with RPA</h3>
               <p class="summary">A Power Automate workflow that prepared and sent client-specific financial documents, replacing an outsourced service and saving ~USD 14K/year.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Automation</span><span class="tag">Process Improvement</span><span class="tag">Business Impact</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">Automation</span><span class="tag">RPA</span><span class="tag">Business Impact</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -213,9 +215,7 @@
               <h3>Sentiment &amp; entity analysis of the PS5 launch on YouTube</h3>
               <p class="summary">Identifying public perception and competitor mentions in YouTube comments about the PS5 launch.</p>
               <div class="meta">
-                <div class="tags" aria-label="Tags">
-                  <span class="tag">Applied AI</span><span class="tag">NLP</span><span class="tag">Fine-tuning</span><span class="tag">API</span>
-                </div>
+                <div class="tags" aria-label="Tags"><span class="tag">NLP</span><span class="tag">Sentiment Analysis</span><span class="tag">Fine-tuning</span><span class="tag">API</span></div>
                 <button class="like" type="button" aria-label="Like this project" aria-pressed="false">
                   <span class="heart" aria-hidden="true">♡</span><span class="count">0</span>
                 </button>
@@ -224,7 +224,7 @@
           </div>
         </article>
       </div>
-      <p class="sr-only" id="project-count" aria-live="polite">9 projects shown</p>
+      <p class="sr-only" id="project-count" aria-live="polite">10 projects shown</p>
     </section>
 
     <section class="illustrations shell" id="illustrations" aria-labelledby="illustrations-title">
@@ -233,8 +233,13 @@
           <p class="eyebrow">AI, drawn out</p>
           <h2 id="illustrations-title">Illustrations</h2>
         </div>
+        <div class="illustration-navigation" role="group" aria-label="Illustration navigation">
+          <button class="illustration-nav" type="button" data-illustration-direction="previous" aria-label="Show previous illustration" aria-controls="illustration-track" disabled><span aria-hidden="true">←</span></button>
+          <button class="illustration-nav" type="button" data-illustration-direction="next" aria-label="Show next illustration" aria-controls="illustration-track"><span aria-hidden="true">→</span></button>
+        </div>
       </div>
-      <div class="illustration-grid">
+      <p class="sr-only" id="illustration-status" aria-live="polite" aria-atomic="true"></p>
+      <div class="illustration-grid" id="illustration-track" tabindex="0" role="region" aria-label="Illustrations; use left and right arrow keys to browse">
         <article class="illustration-card" aria-labelledby="mlp-title">
           <a class="illustration-preview" href="/illustrations/MLP.pdf" target="_blank" rel="noopener" aria-label="Open Multilayer perceptron illustration as a full-size PDF in a new tab">
             <img src="/illustrations/MLP-preview.webp" width="1799" height="1272" loading="lazy" alt="Preview of an illustrated guide to multilayer perceptrons">
@@ -280,6 +285,21 @@
             </div>
           </div>
         </article>
+        <article class="illustration-card" aria-labelledby="forecasting-title">
+          <a class="illustration-preview" href="/illustrations/Forecasting.pdf" target="_blank" rel="noopener" aria-label="Open Forecasting methods at a glance illustration as a full-size PDF in a new tab">
+            <img src="/illustrations/Forecasting-preview.webp" width="1800" height="1273" loading="lazy" alt="Preview comparing statistical forecasting methods SES, ETS, ARIMA and Croston with neural models N-BEATS, N-HiTS and DeepAR">
+            <span class="illustration-preview-label">Explore full size <span aria-hidden="true">↗</span></span>
+          </a>
+          <div class="illustration-details">
+            <p class="illustration-category">Time series · 04</p>
+            <h3 id="forecasting-title">Forecasting methods at a glance</h3>
+            <p class="illustration-description">A visual guide to statistical and neural forecasting methods.</p>
+            <div class="illustration-actions">
+              <a href="/illustrations/Forecasting.pdf" target="_blank" rel="noopener" aria-label="Open Forecasting methods PDF in a new tab">Open PDF <span aria-hidden="true">↗</span></a>
+              <a href="/illustrations/Forecasting.pdf" download="Jimena-Tagle-Forecasting.pdf" aria-label="Download Forecasting methods PDF">Download <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -291,7 +311,7 @@
             <h3 id="project-nine-title">Reconstructing electricity prices with explainable ML</h3>
             <span class="project-award"><span aria-hidden="true">🏆</span> Neural Wave 2026 · Overall &amp; AET category winner</span>
             <p class="dialog-summary">Reconstructed quarter-hour electricity prices from hourly data using interpolation and interpretable ML corrections, reducing mean absolute error by 54.1% against a flat hourly baseline.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Business Impact</span><span class="tag">Machine Learning</span><span class="tag">Time Series</span><span class="tag">Energy Markets</span><span class="tag">Explainable AI</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Explainable AI</span><span class="tag">Energy Markets</span><span class="tag">Business Impact</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -327,13 +347,84 @@
       </div>
     </dialog>
 
+    <dialog class="project-dialog retail-forecasting-dialog" id="project-retail-dialog" aria-labelledby="project-retail-title">
+      <div class="dialog-inner">
+        <div class="dialog-top">
+          <div>
+            <span class="project-type">Retail forecasting</span>
+            <h3 id="project-retail-title">Retail cold-start forecasting with a two-week update</h3>
+            <p class="dialog-summary">How much will a new garment sell over its 12-week lifecycle? How can two weeks of sales improve forecasts and stock allocation?</p>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Forecasting</span><span class="tag">Image Embeddings</span><span class="tag">Retail</span></div>
+          </div>
+          <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+        </div>
+        <div class="detail-grid forecast-details">
+          <div class="forecast-column">
+            <section class="detail-block">
+            <h4 id="forecast-launch-title">I. Forecasting at launch</h4>
+            <p>I compared models and feature sets to understand what additional complexity and information contributed. In the lifecycle-total comparison, the selected baseline already achieved <strong>lower mean absolute error (MAE)</strong> than the adapted published benchmarks (see image 1).</p>
+            <p>The main lifecycle-total models used LightGBM with launch attributes such as category, fabric and store, progressively adding rollout and other-store sales information. At launch, LightGBM produced <strong>narrower prediction ranges while maintaining similar coverage</strong> (see image 2).</p>
+            </section>
+            <section class="detail-block">
+            <h4 id="forecast-update-title">II. Updating after two weeks</h4>
+            <p>Once two weeks of sales became available, I incorporated the garment’s local sales and other-store sales information. The baseline also grouped historical examples by early-sales band. <strong>Every model achieved a lower MAE after this information was incorporated</strong> (see image 3).</p>
+            </section>
+          </div>
+          <div class="forecast-column">
+            <section class="detail-block">
+            <h4 id="forecast-allocation-title">III. Simulating stock allocation</h4>
+            <p>Each model received the same stock budget within each scenario. Units were allocated progressively to the garment–store pair with the highest predicted chance of needing another unit.</p>
+            <p>LightGBM C reduced <strong>simulated shortfall by 5.1% at launch and 11.9% after two weeks</strong>, compared with the corresponding baseline (see image 4). Shortfall means recorded sales left uncovered by the simulated allocation.</p>
+            </section>
+            <section class="detail-block" aria-labelledby="forecast-experiments-title">
+            <h4 id="forecast-experiments-title">Other experiments and lessons</h4>
+            <ul>
+            <li><strong>Fashion-image embeddings:</strong> tested as additional features and for grouping; results were mixed across seasons.</li>
+            <li><strong>Weekly sales patterns:</strong> tested similar-product groups, lifecycle templates and shape × volume × timing models.</li>
+            <li><strong>Signed hurdle models:</strong> separated negative, zero and positive sales before modeling positive sales magnitude. Competitive for weekly forecasting, but did not improve lifecycle-total forecasts.</li>
+            <li><strong>Neural and zero-shot models:</strong> N-BEATS, N-HiTS, DeepAR, Chronos and TimesFM; didn't beat the volume-band baseline.</li>
+            <li><strong>Statistical methods:</strong> ARIMA and ETS, but two local observations were insufficient to fit them reliably.</li>
+            </ul>
+            </section>
+          </div>
+        </div>
+        <div class="image-carousel forecast-gallery" data-carousel data-count-label="Image" role="region" aria-label="Retail forecasting results gallery">
+          <figure class="carousel-slide is-active">
+            <img src="/src/assets/retail-forecasting/launch-mae-comparison.png" width="1752" height="897" loading="lazy" alt="MAE for 12-week lifecycle totals on AW19: the grouped historical median baseline scores 5.097, compared with 4.879 for LightGBM A and 5.280–7.844 for the adapted benchmarks. Lower is better.">
+
+          </figure>
+          <figure class="carousel-slide">
+            <img src="/src/assets/retail-forecasting/launch-uncertainty.png" width="1306" height="621" loading="lazy" alt="An illustrative garment–store forecast at launch: the baseline has a 90% prediction range of 5–27 units, versus 4–24 for LightGBM A. Actual weeks 3–12 sales were 13 units.">
+
+          </figure>
+          <figure class="carousel-slide">
+            <img src="/src/assets/retail-forecasting/two-week-forecast-comparison.png" width="2868" height="1157" loading="lazy" alt="Launch-time and two-week forecasts for the same weeks 3–12 sales total. LightGBM C MAE falls from 4.20 to 3.72, WAPE from 40.0% to 35.5%, and bias moves from −1.49 to −0.55 units.">
+
+          </figure>
+          <figure class="carousel-slide">
+            <img src="/src/assets/retail-forecasting/simulated-shortfall.png" width="1790" height="683" loading="lazy" alt="Simulated shortfall on AW19. LightGBM C leaves 43,575 units uncovered at launch versus 45,925 for the baseline, and 40,916 after two weeks versus 46,427 for the updated baseline.">
+
+          </figure>
+          <div class="forecast-gallery-controls">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Show previous forecasting chart">‹</button>
+            <span class="carousel-count" aria-live="polite">Image 1 / 4</span>
+            <button class="carousel-arrow carousel-next" type="button" aria-label="Show next forecasting chart">›</button>
+          </div>
+        </div>
+        <div class="detail-block forecast-source">
+          <h4>Source</h4>
+          <p>Explore the analysis and project code on <a class="project-source" href="https://github.com/jimenatagle/retail-forecasting" target="_blank" rel="noreferrer">GitHub ↗</a></p>
+        </div>
+      </div>
+    </dialog>
+
     <dialog class="project-dialog compound-dialog" id="project-eight-dialog" aria-labelledby="project-eight-title">
       <div class="dialog-inner">
         <div class="dialog-top"><div>
           <span class="project-type">AI Systems Engineering</span>
           <h3 id="project-eight-title">Improving a Board Game Recommender System with Compound AI</h3>
           <p class="dialog-summary">Improved recommendation accuracy from 68% to 92% by combining a low-cost language model with Python checks, structured outputs and targeted error analysis.</p>
-          <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+          <div class="tags dialog-tags" aria-label="Tags"><span class="tag">NLP</span><span class="tag">Compound AI</span><span class="tag">LLM Evaluation</span></div>
         </div><button class="dialog-close" type="button" aria-label="Close project details">×</button></div>
         <figure class="compound-visual">
           <div class="architecture-scroll" tabindex="0" role="region" aria-label="System architecture comparison; scroll horizontally on smaller screens">
@@ -359,7 +450,7 @@
             <span class="project-type">Optimization</span>
             <h3 id="project-one-title">Evolutionary computation for optimizing distribution systems</h3>
             <p class="dialog-summary">A genetic algorithm that optimizes distribution layouts to reduce delivery costs under real-world constraints.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">Optimization</span><span class="tag">Genetic Algorithms</span><span class="tag">Business Impact</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Optimization</span><span class="tag">Genetic Algorithms</span><span class="tag">Business Impact</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -385,7 +476,7 @@
             <span class="project-type">Graph data</span>
             <h3 id="project-two-title">NoSQL Graph analytics for e-commerce behavior</h3>
             <p class="dialog-summary">Mapping customer-product relationships to reveal purchasing patterns that tables tend to hide.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Graph Analytics</span><span class="tag">Neo4j</span><span class="tag">Business Analytics</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Graph Analytics</span><span class="tag">Neo4j</span><span class="tag">E-commerce</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -439,7 +530,7 @@
             <span class="project-type">Quality analytics</span>
             <h3 id="project-four-title">Predicting &amp; explaining textile rejects</h3>
             <p class="dialog-summary">Most production records have no rejected fabric, but occasional failures can cause significant losses. This project identifies high-risk production conditions and explains the factors associated with reject occurrence and severity.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Machine Learning</span><span class="tag">Statistical Modeling</span><span class="tag">Quality Analytics</span><span class="tag">Business Impact</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Explainable AI</span><span class="tag">Statistical Modeling</span><span class="tag">Quality Analytics</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -484,7 +575,7 @@
             <span class="project-type">Process automation</span>
             <h3 id="project-five-title">Automated customer document delivery with RPA</h3>
             <p class="dialog-summary">A Power Automate workflow that prepared and sent client-specific financial documents, replacing an outsourced service and saving ~USD 14K/year.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Automation</span><span class="tag">Process Improvement</span><span class="tag">Business Impact</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Automation</span><span class="tag">RPA</span><span class="tag">Business Impact</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -508,7 +599,7 @@
           <div>
             <span class="project-type">Natural language processing</span>
             <h3 id="project-six-title">Sentiment &amp; entity analysis of the PS5 launch on YouTube</h3>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Applied AI</span><span class="tag">NLP</span><span class="tag">Fine-tuning</span><span class="tag">API</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">NLP</span><span class="tag">Sentiment Analysis</span><span class="tag">Fine-tuning</span><span class="tag">API</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>
@@ -533,7 +624,7 @@
             <span class="project-type">Fraud analytics</span>
             <h3 id="project-seven-title">Temporal &amp; network analytics for fraud detection</h3>
             <p class="dialog-summary">Detecting suspicious financial accounts by combining time-series behavior with transaction-network dependencies.</p>
-            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Machine Learning</span><span class="tag">Graph Analytics</span><span class="tag">Anomaly Detection</span><span class="tag">Time Series</span></div>
+            <div class="tags dialog-tags" aria-label="Tags"><span class="tag">Time Series</span><span class="tag">Graph Analytics</span><span class="tag">Anomaly Detection</span></div>
           </div>
           <button class="dialog-close" type="button" aria-label="Close project details">×</button>
         </div>

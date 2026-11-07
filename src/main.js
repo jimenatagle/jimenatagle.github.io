@@ -5,8 +5,9 @@ const themeButton = document.querySelector(".theme");
 const projectGrid = document.querySelector(".project-grid");
 const projectOrder = [
   "project-nine-dialog",
-  "project-eight-dialog",
   "project-one-dialog",
+  "project-retail-dialog",
+  "project-eight-dialog",
   "project-four-dialog",
   "project-three-dialog",
   "project-seven-dialog",
@@ -27,35 +28,29 @@ const toProjectId = (title) => title.toLowerCase().replace(/\s+/g, "-");
 const normalizeTag = (tag) => tag.trim().toLowerCase();
 
 const tagTones = {
-  "applied ai": "applied-ai",
-  "compound ai": "applied-ai",
-  "llm evaluation": "machine-learning",
-  "python": "automation",
+  "time series": "time-series",
+  "forecasting": "time-series",
+  "explainable ai": "explainable-ai",
+  "statistical modeling": "explainable-ai",
+  "quality analytics": "explainable-ai",
+  "fine-tuning": "explainable-ai",
   "optimization": "optimization",
   "genetic algorithms": "optimization",
+  "automation": "optimization",
+  "rpa": "optimization",
   "computer vision": "vision",
+  "image embeddings": "vision",
   "3d reconstruction": "vision",
   "image processing": "vision",
-  "machine learning": "machine-learning",
-  "statistical modeling": "statistical",
-  "quality analytics": "statistical",
-  "graph analytics": "graph",
-  "neo4j": "graph",
-  "anomaly detection": "anomaly",
-  "time series": "time-series",
-  "energy markets": "business-analytics",
-  "explainable ai": "applied-ai",
-  "automation": "automation",
-  "process improvement": "automation",
-  "business impact": "business-impact",
-  "business analytics": "business-analytics",
   "nlp": "nlp",
-  "fine-tuning": "nlp",
-  "api": "api",
+  "compound ai": "neutral",
+  "llm evaluation": "nlp",
+  "sentiment analysis": "nlp",
+  "graph analytics": "graph",
 };
 
 document.querySelectorAll(".tag").forEach((tag) => {
-  tag.dataset.tone = tagTones[normalizeTag(tag.textContent)] || "blue";
+  tag.dataset.tone = tagTones[normalizeTag(tag.textContent)] || "neutral";
 });
 
 themeButton.addEventListener("click", () => {
@@ -75,32 +70,35 @@ cards.forEach((card) => {
 });
 
 const filterCategories = [
-  "applied ai",
-  "optimization",
-  "computer vision",
-  "machine learning",
-  "graph analytics",
-  "automation",
-  "business impact",
+  { id: "forecasting", label: "Time Series & Forecasting", tags: ["time series", "forecasting"], tone: "time-series" },
+  { id: "explainable-ai", label: "Explainable AI", tags: ["explainable ai", "statistical modeling", "quality analytics"], tone: "explainable-ai" },
+  { id: "optimization-automation", label: "Optimization & Automation", tags: ["optimization", "genetic algorithms", "automation", "rpa"], tone: "optimization" },
+  { id: "vision", label: "Computer Vision", tags: ["computer vision", "image embeddings", "3d reconstruction", "image processing"], tone: "vision" },
+  { id: "nlp", label: "NLP & LLMs", tags: ["nlp", "llms", "compound ai", "llm evaluation", "sentiment analysis"], tone: "nlp" },
+  { id: "graph", label: "Graph Analytics", tags: ["graph analytics", "neo4j"], tone: "graph" },
 ];
 
-filterCategories.forEach((tag, index) => {
+function matchesFilter(card, category) {
+  return category.tags.some((tag) => card.filterTags.includes(tag));
+}
+
+filterCategories.forEach((category) => {
   const label = document.createElement("label");
   label.className = "filter-option";
-  label.innerHTML = `<input type="checkbox" value="${tag}" id="filter-${index}"><span class="filter-swatch" data-tone="${tagTones[tag] || "blue"}" aria-hidden="true"></span><span>${tag}</span>`;
+  label.innerHTML = `<input type="checkbox" value="${category.id}" id="filter-${category.id}"><span class="filter-swatch" data-tone="${category.tone}" aria-hidden="true"></span><span>${category.label}</span>`;
   filterOptions.append(label);
 });
 
 const filterCheckboxes = [...filterOptions.querySelectorAll("input")];
-
 function applyFilters() {
-  const selected = new Set(filterCheckboxes.filter((input) => input.checked).map((input) => input.value));
+  const selected = filterCategories.filter((category) =>
+    filterCheckboxes.some((input) => input.value === category.id && input.checked));
   cards.forEach((card) => {
-    card.hidden = selected.size > 0 && !card.filterTags.some((tag) => selected.has(tag));
+    card.hidden = selected.length > 0 && !selected.some((category) => matchesFilter(card, category));
   });
 
   const shown = cards.filter((card) => !card.hidden).length;
-  filterCount.textContent = selected.size === 0 || selected.size === filterCategories.length ? "All" : String(selected.size);
+  filterCount.textContent = shown === cards.length ? "All" : String(shown);
   document.querySelector("#project-count").textContent = `${shown} project${shown === 1 ? "" : "s"} shown`;
 }
 
@@ -111,16 +109,15 @@ filterToggle.addEventListener("click", () => {
 });
 
 filterOptions.addEventListener("change", applyFilters);
-
 filterRoot.querySelector('[data-filter-action="all"]').addEventListener("click", () => {
   filterCheckboxes.forEach((input) => { input.checked = true; });
   applyFilters();
 });
-
 filterRoot.querySelector('[data-filter-action="clear"]').addEventListener("click", () => {
   filterCheckboxes.forEach((input) => { input.checked = false; });
   applyFilters();
 });
+applyFilters();
 
 document.addEventListener("click", (event) => {
   if (!filterMenu.hidden && !filterRoot.contains(event.target)) {
@@ -153,6 +150,7 @@ document.querySelectorAll(".project-dialog").forEach((dialog) => {
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = [...carousel.querySelectorAll(".carousel-slide")];
   const count = carousel.querySelector(".carousel-count");
+  const countLabel = carousel.dataset.countLabel ? `${carousel.dataset.countLabel} ` : "";
   let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
 
   if (activeIndex < 0) activeIndex = 0;
@@ -162,13 +160,60 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle("is-active", slideIndex === activeIndex);
     });
-    count.textContent = `${activeIndex + 1} / ${slides.length}`;
+    count.textContent = `${countLabel}${activeIndex + 1} / ${slides.length}`;
   }
 
   carousel.querySelector(".carousel-prev").addEventListener("click", () => showSlide(activeIndex - 1));
   carousel.querySelector(".carousel-next").addEventListener("click", () => showSlide(activeIndex + 1));
   showSlide(activeIndex);
 });
+
+const illustrationTrack = document.querySelector("#illustration-track");
+const illustrationCards = [...illustrationTrack.querySelectorAll(".illustration-card")];
+const illustrationPrevious = document.querySelector('[data-illustration-direction="previous"]');
+const illustrationNext = document.querySelector('[data-illustration-direction="next"]');
+const illustrationStatus = document.querySelector("#illustration-status");
+
+function updateIllustrationNavigation() {
+  const maxScroll = illustrationTrack.scrollWidth - illustrationTrack.clientWidth;
+  illustrationPrevious.disabled = illustrationTrack.scrollLeft <= 2;
+  illustrationNext.disabled = illustrationTrack.scrollLeft >= maxScroll - 2;
+
+  const viewport = illustrationTrack.getBoundingClientRect();
+  const visible = illustrationCards.filter((card) => {
+    const bounds = card.getBoundingClientRect();
+    return bounds.right > viewport.left + 8 && bounds.left < viewport.right - 8;
+  });
+  if (visible.length) {
+    const first = illustrationCards.indexOf(visible[0]) + 1;
+    const last = illustrationCards.indexOf(visible.at(-1)) + 1;
+    illustrationStatus.textContent = first === last
+      ? `Showing illustration ${first} of ${illustrationCards.length}`
+      : `Showing illustrations ${first} to ${last} of ${illustrationCards.length}`;
+  }
+}
+
+function moveIllustrations(direction) {
+  const gap = parseFloat(getComputedStyle(illustrationTrack).columnGap);
+  const step = illustrationCards[0].getBoundingClientRect().width + gap;
+  illustrationTrack.scrollBy({
+    left: direction * step,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+  });
+}
+
+illustrationPrevious.addEventListener("click", () => moveIllustrations(-1));
+illustrationNext.addEventListener("click", () => moveIllustrations(1));
+illustrationTrack.addEventListener("scroll", updateIllustrationNavigation, { passive: true });
+illustrationTrack.addEventListener("keydown", (event) => {
+  if (event.target !== illustrationTrack) return;
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    moveIllustrations(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+new ResizeObserver(updateIllustrationNavigation).observe(illustrationTrack);
+updateIllustrationNavigation();
 
 function showLiked(button, liked) {
   button.setAttribute("aria-pressed", String(liked));
